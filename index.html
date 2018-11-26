@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>proportion-box</title>
+    <link rel="stylesheet" href="./proportion-box.css">
+</head>
+
+<body>
+    <div id="demo" style="border:1px solid;" class="proportion-container proportion-container-reverse">
+        <div class="proportion-inner">
+            <div class="proportion-content">
+                这是一个宽高定比例的示例,每点击一次都会导致宽高等比例变大,默认情况下是宽度变化导致高度跟着变大,
+                但若是添加上class: proportion-container-reverse,那么就是高度变化导致宽度跟着变化了
+            </div>
+        </div>
+    </div>
+    <script>
+        var demo = document.querySelector("#demo"),
+        isReverse = demo.getAttribute("class").indexOf("proportion-container-reverse")!=-1;
+        if(!isReverse){
+            demo.style.width="400px";
+        }else{
+            demo.style.height="400px";
+        }
+        demo.addEventListener("click", function () {
+            !isReverse?
+            this.style.width = parseFloat(this.style.width) + 200 + "px"
+            :
+            this.style.height = parseFloat(this.style.height) + 200 + "px";
+        })
+    </script>
+</body>
+
+</html>

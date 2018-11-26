@@ -1,0 +1,27 @@
+.proportion-inner {
+    /* 这个padding-top:60%就是设置的高度相当于宽度的60%;若是设置为80%;那么高度就相当于宽度的80% */
+    padding-top: 60%;
+    position: relative;
+}
+
+.proportion-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.proportion-container-reverse{
+    writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+}
+.proportion-container-reverse .proportion-inner{
+    /* 这个padding-left:60%就是设置的宽度相当于高度的60%;若是设置为80%;那么宽度就相当于高度的80% */
+    padding-left: 60%;
+    padding-top: 0;
+    height: 100%;
+}
+.proportion-container-reverse .proportion-content{
+    writing-mode: lr-tb;
+    writing-mode: horizontal-tb;
+}
